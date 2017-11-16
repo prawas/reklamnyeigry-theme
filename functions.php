@@ -226,6 +226,15 @@ function kristinka_comment($comment, $args) {
 <?php 
 }
 
+function kristinka_default_thumbnail() { ?>
+  <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute();?>">
+  <img src="<?= get_template_directory_uri() ?>/images/post-no-image.jpg"
+    alt="<?= the_title() ?>"
+    class="attachment-kristinka-featured size-kristinka-featured wp-post-image">
+  </a>
+<?php
+}
+
 // =========================
 //    WooCommerce support
 // =========================
