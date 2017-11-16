@@ -1131,7 +1131,9 @@ a:hover.more-link,
 #comments .reply a:hover{
 	text-decoration: underline;
 }
-a.more-link, 
+a.more-link{
+	margin-bottom: 5px;
+} 
 #comments .reply{
 	margin-bottom: 5px;
 	padding-bottom: 32px;
