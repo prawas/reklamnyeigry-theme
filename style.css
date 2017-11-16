@@ -1123,6 +1123,7 @@ a.more-link,
     display: inline-block;
     line-height: 22px;
     padding: 2px 12px;
+
 }
 .posts-navigation .nav-previous a:hover, 
 .posts-navigation .nav-next a:hover, 
@@ -1133,6 +1134,7 @@ a:hover.more-link,
 a.more-link, 
 #comments .reply{
 	margin-bottom: 5px;
+	padding-bottom: 32px;
 }
 /* end */
 
