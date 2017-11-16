@@ -213,9 +213,11 @@ require get_template_directory() . '/inc/jetpack.php';
              		 		<?php comment_text() ?>
              		 		  <div class="reply">
 
-               <?php comment_reply_link(array('reply_text' => "Ответить",
-	'respond_id' => 'comment', 'depth' => 5, 'max_depth' => 10))?>
-               </div>
+               				<?php comment_reply_link(array('reply_text' => "Ответить",
+								'respond_id' => 'comment',
+								'depth' => 5,
+								'max_depth' => 10))?>
+               				</div>
               			</div>
               		</div>
               </div>
