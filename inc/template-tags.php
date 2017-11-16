@@ -88,7 +88,7 @@ function kristinka_posted_on_single() {
 
 	if ( ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
 		echo ' <span class="comments-link"><i class="fa fa-comment-o"></i> ';
-		comments_popup_link( esc_html__( 'Leave a comment', 'kristinka' ), esc_html__( '1 Comment', 'kristinka' ), esc_html__( '% Comments', 'kristinka' ) );
+		comments_popup_link( esc_html__( 'Оставьте комментарий', 'kristinka' ), esc_html__( '1 комментарий', 'kristinka' ), esc_html__( '% Comments', 'kristinka' ) );
 		echo '</span>';
 	}	
 
