@@ -49,43 +49,17 @@ if ( have_comments() ) : ?>
 	
 <ol id="comment-list" >
 
+      
       <?php
-        function verstaka_comment($comment, $args){
-          $GLOBALS['comment'] = $comment; 
-
-          ?>
-
-          <div <?php comment_class(); ?> id="li-comment-<?php comment_ID() ?>">
-            <div id="comment-<?php comment_ID(); ?>">
-            <section class='full_comment' >
-            	<div class='full_comment_row' >
-              		<div class="ava_in_tabl"  >
-              	
-                	 <?php echo get_avatar($comment, $size='50', '' ); ?>
-                 	</div>
-                       
-               		<div class="comment_text" >
-               			<div class="tabl_comment"><span class="comment-author"><?=get_comment_author_link() ?></span>
-                			<?php printf(__('%1$s at %2$s'), get_comment_date(),  get_comment_time()) ?>
-              
-             		 		<?php comment_text() ?>
-              			</div>
-              		</div>
-              </div>
-            </section>
-              
-           </div>
-           </div>
-
-            
-      <?php }
+      
         $args = array(
 
           'reply_text' => 'Ответить',
-          'callback' => 'verstaka_comment'
+          'callback' => 'kristinka_comment'
 
         );
         wp_list_comments($args);
+
       ?>
     </ol>
 
