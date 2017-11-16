@@ -186,10 +186,8 @@ require get_template_directory() . '/inc/customizer.php';
 require get_template_directory() . '/inc/jetpack.php';
 
 
-function kristinka_comment($comment, $args){
-	$GLOBALS['comment'] = $comment; 
-
-    ?>
+function kristinka_comment($comment, $args) {
+	$GLOBALS['comment'] = $comment; ?>
 
     <div <?php comment_class(); ?> id="li-comment-<?php comment_ID() ?>">
         <div id="comment-<?php comment_ID(); ?>">
@@ -225,4 +223,20 @@ function kristinka_comment($comment, $args){
         </div>       
     </div>
             
-    <?php }
+<?php 
+}
+
+// =========================
+//    WooCommerce support
+// =========================
+
+function kristinka_woocommerce_support() {
+  add_theme_support( 'woocommerce' );
+}
+
+function kristinka_loop_shop_per_page( $cols ) {
+  return 24;
+}
+
+add_action( 'after_setup_theme', 'kristinka_woocommerce_support' );
+add_filter( 'loop_shop_per_page', 'kristinka_loop_shop_per_page', 20 );

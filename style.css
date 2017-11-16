@@ -2,7 +2,7 @@
 Theme Name: Kristinka
 Author: Valerio, Sasha Prawas & Sveta Tur
 Description: Специально для сайта reklamnyeigry.by
-Version: 1.1.11
+Version: 1.1.12
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: kristinka
@@ -1458,23 +1458,42 @@ object {
 	display: block;
 }
 
+/* = WooCommerce
+----------------------------------------------- */
+.woocommerce ul.products li.product, .woocommerce-page ul.products li.product {
+	margin: 0 0.5em 2.992em 0;
+	width: calc(33% - 0.5em);
+}
+
+
+@media (max-width: 768px) {
+	.woocommerce ul.products li.product, .woocommerce-page ul.products li.product, .woocommerce-page[class*=columns-] ul.products li.product, .woocommerce[class*=columns-] ul.products li.product {
+    width: 48%;
+    float: left;
+    clear: both;
+    margin: 0 0 2.992em;
+	}	
+}
+
 /* =RESPONSIVE MEDIA
 ----------------------------------------------- */
 @media (max-width: 700px) {
-
     #primary{
         width: 100%;    
     }
+
     #secondary{
         margin-top: 40px;
         width: 100%;
     }
+
     .footer-widget-left,
     .footer-widgets-right,
     .footer-first-widget-right,
     .footer-second-widget-right{
         width: 100%;
     }
+
     .no-sidebar #primary, 
     .page-template-nosidebar #primary{
         width: 100% !important;
@@ -1488,20 +1507,20 @@ object {
 }
 
 
+@media (max-width:680px) {
+	.full_comment_row{
+		display:inline;
+	}
+	
+	.tabl_comment {
+		width: 100%;
+		text-align: left;
+		padding-left: 0px;
+		margin-left: 0px;
+	}
 
-@media(max-width:680px){
-.full_comment_row{
-	display:inline;
-}
-
-.tabl_comment {
-	width: 100%;
-	text-align: left;
-	padding-left: 0px;
-	margin-left: 0px;
-}
-ul.children{
-	padding-left: 0px;
-	margin-left: 0px;
-}
+	ul.children{
+		padding-left: 0px;
+		margin-left: 0px;
+	}
 }
