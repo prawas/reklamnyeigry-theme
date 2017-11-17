@@ -18,7 +18,9 @@ get_header(); ?>
 		<main id="main" class="site-main" role="main">
 
 		<?php
+
 		$postcount=0;
+
 		if ( have_posts() ) :
 
 			if ( is_home() && ! is_front_page() ) : ?>
@@ -36,8 +38,7 @@ get_header(); ?>
 			/* Start the Loop */
 			
 			while ( have_posts() ) : the_post();
-			$postcount++;
-			
+				$postcount++;
 
 				/*
 				 * Include the Post-Format-specific template for the content.
@@ -46,13 +47,12 @@ get_header(); ?>
 				 */
 				get_template_part( 'template-parts/content', get_post_format() );
 				
-
-				if ($postcount==2){
-					?><div class="reklama" style="width:728px; height: 90px; background: #ccc;" ><?php echo "будет здесь реклама";?>
-					
-					</div>
-				<?php
-				}
+				if ($postcount == 2): ?>
+						<div class="banner" style="width:728px; height: 90px; background: #ccc;" >
+							РЕКЛАМА
+						</div>
+				<?php 
+				endif;
 
 			endwhile; ?>
 

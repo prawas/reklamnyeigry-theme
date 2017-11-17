@@ -1573,8 +1573,9 @@ object {
   }
 }
 
-div.reklama {
+div.banner {
 	width:728px; 
 	height: 90px; 
 	background: #ccc;
+  margin-bottom: 2em;
 }
