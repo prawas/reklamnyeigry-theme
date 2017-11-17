@@ -1460,9 +1460,16 @@ object {
 
 /* = WooCommerce
 ----------------------------------------------- */
+
+.woocommerce .products ul, .woocommerce ul.products {
+  display: flex;
+  flex-wrap: wrap;
+}
+
 .woocommerce ul.products li.product, .woocommerce-page ul.products li.product {
   margin: 0 0.5em 2.992em 0;
   width: calc(33% - 0.5em);
+  float: none;
 }
 
 
