@@ -1572,3 +1572,9 @@ object {
     margin-left: 0px;
   }
 }
+
+div.reklama {
+	width:728px; 
+	height: 90px; 
+	background: #ccc;
+}
