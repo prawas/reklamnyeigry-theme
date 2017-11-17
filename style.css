@@ -470,9 +470,7 @@ textarea {
   border: 1px solid #eaeaea;
   border-radius: 3px;
   width: 100%;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-    -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-    -moz-box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
 }
 
 select {
@@ -555,8 +553,9 @@ textarea {
 
 #masthead nav{
   background-color: #000;
-    border-top: 4px solid #249ccc;
-    padding: 0 25px;
+  border-top: 4px solid #249ccc;
+  padding: 0 25px;
+  border-bottom: 3px solid #dedede;
 }
 
 /*--------------------------------------------------------------
@@ -1041,10 +1040,12 @@ a:active {
 
 .post .entry-header{
   padding: 15px 15px 0 15px;
+  flex-grow: 1;
 }
 
 .post .entry-content{
   padding: 0 15px 15px 15px;
+  flex-grow: 1;
 }
 
 .single .post .entry-meta{
@@ -1102,22 +1103,25 @@ a:active {
 /* defining .kristinka-blog, .kristinka-magazine and .single classes */
 
 article.kristinka-blog{
-  margin-bottom: 50px;
+  margin-bottom: 2em;
   width: 100%;
 }
 
 article.kristinka-magazine {
-  margin-bottom: 50px;
-    width:48%;
+  margin-bottom: 2em;
+  width:48%;
+  flex-direction: column;
+  display: flex;
 }
 
-article:nth-of-type(odd).kristinka-magazine {
-    clear:both;
-    float:left;
+article.kristinka-magazine > a {
+  flex-grow: 10;
+  display: flex;
+  flex-direction: column;
 }
 
-article:nth-of-type(even).kristinka-magazine{
-    float:right;
+article.kristinka-magazine > a > img {
+  margin: auto;
 }
 
 /* edit margin*/
@@ -1481,6 +1485,12 @@ object {
 
 .gallery-caption {
   display: block;
+}
+
+.articles-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 /* = WooCommerce
