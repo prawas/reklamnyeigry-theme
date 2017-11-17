@@ -244,7 +244,7 @@ function kristinka_woocommerce_support() {
 }
 
 function kristinka_loop_shop_per_page( $cols ) {
-  return 24;
+  return 60;
 }
 
 add_action( 'after_setup_theme', 'kristinka_woocommerce_support' );
