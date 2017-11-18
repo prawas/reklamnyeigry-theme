@@ -1032,10 +1032,14 @@ a:active {
 }
 
 /* .post class*/
-.post, .articles-wrapper .product {
+.post, .articles-wrapper .product, .page {
   border-radius: 3px;
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.08), 0 2px 10px 0 rgba(0, 0, 0, 0.04);
   background-color: #fff;
+}
+
+.site-main .page {
+  padding: 15px;
 }
 
 .post .entry-header{
@@ -1134,7 +1138,7 @@ article.kristinka-magazine > a > img {
   margin-top: 0;
 }
 
-.post .entry-title a{
+.post .entry-title a, .page .entry-title a{
   color: inherit;
 }
 /* end */
