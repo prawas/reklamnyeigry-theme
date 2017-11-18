@@ -603,6 +603,12 @@ a:active {
   padding-left: 0;
 }
 
+.top-menu ul:before {
+  content: 'Наши группы в соцсетях:';
+  margin-right: 15px;
+  float: left;
+}
+
 .top-menu li {
   float: left;
   position: relative;
@@ -1557,6 +1563,14 @@ object {
     .no-sidebar #primary, 
     .page-template-nosidebar #primary{
         width: 100% !important;
+    }
+
+    .hidden-xs {
+      display: none;
+    }
+
+    .top-menu ul:before {
+      display: none;
     }
 }
 
