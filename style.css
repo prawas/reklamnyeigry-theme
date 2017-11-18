@@ -1032,7 +1032,7 @@ a:active {
 }
 
 /* .post class*/
-.post{
+.post, .articles-wrapper .product {
   border-radius: 3px;
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.08), 0 2px 10px 0 rgba(0, 0, 0, 0.04);
   background-color: #fff;
@@ -1511,6 +1511,14 @@ object {
 
 .woocommerce .woocommerce-ordering {
   margin: 0 1em 1em;
+}
+
+.articles-wrapper .product {
+  padding: 15px;
+}
+
+.articles-wrapper .product h2 > a {
+  color: #404040;
 }
 
 
