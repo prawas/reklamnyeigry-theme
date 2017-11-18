@@ -604,7 +604,7 @@ a:active {
 }
 
 .top-menu ul:before {
-  content: 'Наши группы в соцсетях:';
+  content: '\41D\430\448\438\20\433\440\443\43F\43F\44B\20\432\20\441\43E\446\441\435\442\44F\445\3A';
   margin-right: 15px;
   float: left;
 }
