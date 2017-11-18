@@ -22,6 +22,8 @@ get_header(); ?>
 				?>
 			</header><!-- .page-header -->
 
+			<div class="articles-wrapper">
+
 			<?php
 			/* Start the Loop */
 			while ( have_posts() ) : the_post();
@@ -34,6 +36,11 @@ get_header(); ?>
 				get_template_part( 'template-parts/content', get_post_format() );
 
 			endwhile;
+		?>
+
+		</div>
+
+		<?php
 
 			the_posts_navigation();
 

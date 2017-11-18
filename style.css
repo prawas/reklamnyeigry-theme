@@ -82,6 +82,7 @@ template {
 
 a {
   background-color: transparent;
+  word-wrap: break-word;
 }
 
 a:active,
@@ -1501,6 +1502,10 @@ object {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+}
+
+.ya-share2 {
+  margin-top: 15px;
 }
 
 /* = WooCommerce
