@@ -18,7 +18,17 @@
 		<?php get_sidebar( 'footer' ); ?>
 
 		<div class="site-info">
-			Рекламные игры и акции в Беларуси.
+
+      <div class="pull-right">
+        <script src="//yastatic.net/es5-shims/0.0.2/es5-shims.min.js"></script>
+        <script src="//yastatic.net/share2/share.js"></script>
+        <div class="ya-share2" data-services="vkontakte,facebook,odnoklassniki,twitter"></div>
+      </div>
+
+			<a href="/">reklamnyeigry.by</a> &mdash; информационный портал о рекламных играх в Беларуси.
+      <br/>
+      Акции. Скидки. Промо-коды и много другой полезной информации специально для Вас!
+
 		</div>
 
 	</footer><!-- #colophon -->
