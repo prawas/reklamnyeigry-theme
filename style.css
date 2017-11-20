@@ -1581,6 +1581,21 @@ object {
 }
 
 
+div.banner {
+  width:728px; 
+  height: 90px; 
+  margin-bottom: 2em;
+  background-image: url(/wp-content/themes/reklamnyeigry-theme/images/миниатюра4.png);
+}
+
+div.banner2{
+	width:300px; 
+ 	height: 600px; 
+	background-image: url(/wp-content/themes/reklamnyeigry-theme/images/миниатюра5.png);
+}
+
+
+
 @media (max-width:680px) {
   .full_comment_row{
     display:inline;
@@ -1597,11 +1612,14 @@ object {
     padding-left: 0px;
     margin-left: 0px;
   }
+  div.banner {
+  width:320px;
+  height: 50px;
+  background-image: url(/wp-content/themes/reklamnyeigry-theme/images/миниатюра3.png);
+  } 
+
+   
 }
 
-div.banner {
-  width:728px; 
-  height: 90px; 
-  background: #ccc;
-  margin-bottom: 2em;
-}
+
+

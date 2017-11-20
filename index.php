@@ -47,10 +47,19 @@ get_header(); ?>
 				 */
 				get_template_part( 'template-parts/content', get_post_format() );
 				
-				if ($postcount == 2): ?>
-						<div class="banner" style="width:728px; height: 90px; background: #ccc;" >
+				if ($postcount == 2 || $postcount == 9 ): ?>
+						<div class="banner"  >
 							РЕКЛАМА
 						</div>
+				<?php 
+				endif;
+
+				if ($postcount%6==0):?>
+					<article class="kristinka-magazine post" >
+						<div class="banner2" >
+						и тут реклама
+						</div>
+					</article>
 				<?php 
 				endif;
 
