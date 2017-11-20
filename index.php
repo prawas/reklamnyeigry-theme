@@ -48,8 +48,8 @@ get_header(); ?>
 				get_template_part( 'template-parts/content', get_post_format() );
 				
 				if ($postcount == 2 || $postcount == 9 ): ?>
-						<div class="banner"  >
-							РЕКЛАМА
+						<div class="banner">
+							<?php if (function_exists ('adinserter')) echo adinserter (1); ?>
 						</div>
 				<?php 
 				endif;
@@ -57,7 +57,7 @@ get_header(); ?>
 				if ($postcount%6==0):?>
 					<article class="kristinka-magazine post" >
 						<div class="banner2" >
-						и тут реклама
+						<?php if (function_exists ('adinserter')) echo adinserter (2); ?>
 						</div>
 					</article>
 				<?php 
