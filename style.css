@@ -1614,6 +1614,9 @@ div.banner {
   height: 90px; 
   margin-bottom: 2em;
   background-image: url(/wp-content/themes/reklamnyeigry-theme/images/миниатюра4.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 div.banner2{
@@ -1621,6 +1624,9 @@ div.banner2{
  	height: 600px; 
   max-width: 100%;
 	background-image: url(/wp-content/themes/reklamnyeigry-theme/images/миниатюра5.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 
