@@ -249,15 +249,4 @@ add_filter( 'loop_shop_per_page', 'kristinka_loop_shop_per_page', 20 );
 
 
 
-add_action('woocommerce_before_main_content', 'my_theme');
 
-function my_theme() {
-		
-		?>
-
-		<script src="//yastatic.net/es5-shims/0.0.2/es5-shims.min.js"></script>
-		<script src="//yastatic.net/share2/share.js"></script>
-		<div class="ya-share2" data-services="vkontakte,facebook,odnoklassniki,twitter"></div>
-		<?php }
-
-		?>
