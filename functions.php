@@ -244,3 +244,9 @@ function kristinka_loop_shop_per_page( $cols ) {
 
 add_action( 'after_setup_theme', 'kristinka_woocommerce_support' );
 add_filter( 'loop_shop_per_page', 'kristinka_loop_shop_per_page', 20 );
+
+
+
+
+
+
