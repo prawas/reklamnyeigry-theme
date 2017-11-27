@@ -38,8 +38,7 @@ get_header(); ?>
 
             <?php
     
-            // $ad_place=get_place();
-            $ad_place = OUR_BANNER_PLACE_small_2;
+            $ad_place=get_place();
             
             /* Start the Loop */
             
