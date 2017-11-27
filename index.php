@@ -40,19 +40,17 @@ get_header(); ?>
 	$banner_1=['<img src="/wp-content/themes/reklamnyeigry-theme/images/728 x 90_1.jpg">', '<img src="/wp-content/themes/reklamnyeigry-theme/images/728 x 90_2.jpg">'];
 	$banner_2=['<img src="/wp-content/themes/reklamnyeigry-theme/images/300х600_1.jpg">', '<img src="/wp-content/themes/reklamnyeigry-theme/images/300х600_2.jpg">'];
 
-			$a=rand(1,5);
+			$a=rand(1,10);
 			if ($a<=4){
 				$mesto=$vse_mesta[array_rand($vse_mesta, 1)];
 			}
-			echo $mesto;
-
-
+			
 			
 			/* Start the Loop */
 			
 			while ( have_posts() ) : the_post();
 				$postcount++;
-							
+
 								/*
 				 * Include the Post-Format-specific template for the content.
 				 * If you want to override this in a child theme, then include a file
