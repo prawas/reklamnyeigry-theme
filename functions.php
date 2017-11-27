@@ -271,9 +271,9 @@ $vse_mesta = [
 function get_place(){
 	global $vse_mesta;
 
-	$a=rand(2,10);
+	$a=rand(0,100);
 
-	if ($a<=4) {
+	if ($a<=10) {
 		return $vse_mesta[array_rand($vse_mesta, 1)]; 
   } else { 
     return 0; 
