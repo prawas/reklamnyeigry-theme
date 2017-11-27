@@ -35,12 +35,25 @@ get_header(); ?>
 			<div class="articles-wrapper">
 
 			<?php
+
+	$vse_mesta=[2, 6, 9, 12, 18];
+	$banner_1=['<img src="/wp-content/themes/reklamnyeigry-theme/images/728 x 90_1.jpg">', '<img src="/wp-content/themes/reklamnyeigry-theme/images/728 x 90_2.jpg">'];
+	$banner_2=['<img src="/wp-content/themes/reklamnyeigry-theme/images/300х600_1.jpg">', '<img src="/wp-content/themes/reklamnyeigry-theme/images/300х600_2.jpg">'];
+
+			$a=rand(1,5);
+			if ($a<=4){
+				$mesto=$vse_mesta[array_rand($vse_mesta, 1)];
+			}
+			echo $mesto;
+
+
+			
 			/* Start the Loop */
 			
 			while ( have_posts() ) : the_post();
 				$postcount++;
-
-				/*
+							
+								/*
 				 * Include the Post-Format-specific template for the content.
 				 * If you want to override this in a child theme, then include a file
 				 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
@@ -49,15 +62,27 @@ get_header(); ?>
 				
 				if ($postcount == 2 || $postcount == 9 ): ?>
 						<div class="banner">
-							<?php if (function_exists ('adinserter')) echo adinserter (1); ?>
+							  <?php if (function_exists ('adinserter')) echo adinserter (1);  
+							
+							if ($mesto==$postcount){
+								echo $banner_1[array_rand($banner_1, 1)];
+							}?>
+
 						</div>
-				<?php 
+
+					<?php 	
+				
 				endif;
 
 				if ($postcount%6==0):?>
 					<article class="kristinka-magazine post" >
 						<div class="banner2" >
-						<?php if (function_exists ('adinserter')) echo adinserter (2); ?>
+						<?php if (function_exists ('adinserter')) echo adinserter (2);
+
+								if ($mesto==$postcount){
+									echo $banner_2[array_rand($banner_2, 1)];
+								}?>
+
 						</div>
 					</article>
 				<?php 
@@ -82,3 +107,6 @@ get_header(); ?>
 <?php
 kristinka_sidebar_select();
 get_footer();
+
+
+
