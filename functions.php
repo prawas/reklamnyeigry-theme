@@ -263,19 +263,35 @@ $vse_mesta=[OUR_BANNER_PLACE_small_1, OUR_BANNER_PLACE_small_2, OUR_BANNER_PLACE
 
 function get_place(){
 	global $vse_mesta;
-	$a=rand(1,4);
-		if ($a<=4){
-			$mesto=$vse_mesta[array_rand($vse_mesta, 1)];
-		}
-	return $mesto;
+	$a=rand(1,10);
+	if ($a<=4){
+		return $vse_mesta[array_rand($vse_mesta, 1)]; } else { return 0; }
 }
 
 
-function get_banner_for_place($banner){
-	$vibor=$banner[array_rand($banner, 1)]; ?>
-		<a href="<?php $vibor[1]; ?>" target="_blank">
-			<?php echo $vibor[0];?>
-		</a><?php
+
+function get_banner_for_place($mesto){
+
+$banner_1=[
+	array('<img src="'.get_template_directory_uri ().'/images/728 x 90_1.jpg">', 'https://zavlab.onest.by/?utm_source=reklamnyeigry&utm_medium=banner&utm_campaign=large-banner-1'), 
+	array('<img src="'.get_template_directory_uri ().'/images/728 x 90_2.jpg">', 'https://zavlab.onest.by/?utm_source=reklamnyeigry&utm_medium=banner&utm_campaign=large-banner-2')
+];
+
+$banner_2=[
+	array('<img src="'.get_template_directory_uri ().'/images/300х600_1.jpg">', 'https://zavlab.onest.by/?utm_source=reklamnyeigry&utm_medium=banner&utm_campaign=wide-banner-1'),
+	array('<img src="'.get_template_directory_uri ().'/images/300х600_2.jpg">', 'https://zavlab.onest.by/?utm_source=reklamnyeigry&utm_medium=banner&utm_campaign=wide-banner-2')
+];
+	if ($mesto==2 || $mesto==9){
+		$vibor=$banner_1[array_rand($banner_1, 1)]; ?>
+			<a href="<?php echo $vibor[1] ?>" target="_blank">
+				<?php echo $vibor[0];?>
+			</a><?php
+	}elseif ($mesto==6 || $mesto==12 || $mesto==18){
+		$vibor=$banner_2[array_rand($banner_2, 1)]; ?>
+			<a href="<?php echo $vibor[1] ?>" target="_blank">
+				<?php echo $vibor[0];?>
+			</a><?php
+	}
 }
 
 

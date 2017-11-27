@@ -21,7 +21,7 @@ get_header(); ?>
 		<?php
 
 		$postcount=0;
-		$ad_place=0;
+		
 
 		if ( have_posts() ) :
 
@@ -37,22 +37,8 @@ get_header(); ?>
 			<div class="articles-wrapper">
 
 			<?php
-
 	
-$banner_1=[
-	array('<img src="'.get_template_directory_uri ().'/images/728 x 90_1.jpg">', 'https://zavlab.onest.by/?utm_source=reklamnyeigry&utm_medium=banner&utm_campaign=large-banner-1'), 
-	array('<img src="'.get_template_directory_uri ().'/images/728 x 90_2.jpg">', 'https://zavlab.onest.by/?utm_source=reklamnyeigry&utm_medium=banner&utm_campaign=large-banner-2')
-];
-
-$banner_2=[
-	array('<img src="'.get_template_directory_uri ().'/images/300х600_1.jpg">', 'https://zavlab.onest.by/?utm_source=reklamnyeigry&utm_medium=banner&utm_campaign=wide-banner-1'),
-	array('<img src="'.get_template_directory_uri ().'/images/300х600_2.jpg">', 'https://zavlab.onest.by/?utm_source=reklamnyeigry&utm_medium=banner&utm_campaign=wide-banner-2')
-];
-
-
 $ad_place=get_place();
-echo $ad_place;
-
 			
 			/* Start the Loop */
 			
@@ -68,24 +54,23 @@ echo $ad_place;
 				
 				if ($postcount == 2 || $postcount == 9 ): ?>
 						<div class="banner">
-							<?php  
-							
-							if ($ad_place==$postcount){
-									get_banner_for_place($banner_1);
-							}else{ if (function_exists ('adinserter')) echo adinserter (1); }
-							?>
+							<?php  if ($ad_place==$postcount){
+									get_banner_for_place($ad_place);
+							}else{ 
+								if (function_exists ('adinserter')) echo adinserter (1); 
+								}
+								?>
 						</div>
-
-					<?php 	
+						<?php 	
 				endif;
 
 				if ($postcount%6==0):?>
 					<article class="kristinka-magazine post" >
 						<div class="banner2" >
-						<?php if (function_exists ('adinserter')) echo adinserter (2);
-
-								if ($ad_place==$postcount){
-									get_banner_for_place($banner_2);
+							<?php if ($ad_place==$postcount){
+									get_banner_for_place($ad_place);
+								}else{
+									if (function_exists ('adinserter')) echo adinserter (2);
 								}
 								?>
 
