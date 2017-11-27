@@ -246,6 +246,38 @@ add_action( 'after_setup_theme', 'kristinka_woocommerce_support' );
 add_filter( 'loop_shop_per_page', 'kristinka_loop_shop_per_page', 20 );
 
 
+// OUR banners
+// __________________
+
+
+
+
+define('OUR_BANNER_PLACE_small_1', 2);
+define('OUR_BANNER_PLACE_small_2', 9);
+define('OUR_BANNER_PLACE_large_1', 6);
+define('OUR_BANNER_PLACE_large_2', 12);
+define('OUR_BANNER_PLACE_large_3', 18);
+
+$vse_mesta=[OUR_BANNER_PLACE_small_1, OUR_BANNER_PLACE_small_2, OUR_BANNER_PLACE_large_1, OUR_BANNER_PLACE_large_2, OUR_BANNER_PLACE_large_3];
+
+
+function get_place(){
+	global $vse_mesta;
+	$a=rand(1,4);
+		if ($a<=4){
+			$mesto=$vse_mesta[array_rand($vse_mesta, 1)];
+		}
+	return $mesto;
+}
+
+
+function get_banner_for_place($banner){
+	$vibor=$banner[array_rand($banner, 1)]; ?>
+		<a href="<?php $vibor[1]; ?>" target="_blank">
+			<?php echo $vibor[0];?>
+		</a><?php
+}
+
 
 
 

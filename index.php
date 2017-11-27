@@ -12,6 +12,7 @@
  * @package Kristinka
  */
 
+
 get_header(); ?>
 
 	<div id="primary" class="content-area">
@@ -20,6 +21,7 @@ get_header(); ?>
 		<?php
 
 		$postcount=0;
+		$ad_place=0;
 
 		if ( have_posts() ) :
 
@@ -36,15 +38,21 @@ get_header(); ?>
 
 			<?php
 
-	$vse_mesta=[2, 6, 9, 12, 18];
-	$banner_1=['<img src="/wp-content/themes/reklamnyeigry-theme/images/728 x 90_1.jpg">', '<img src="/wp-content/themes/reklamnyeigry-theme/images/728 x 90_2.jpg">'];
-	$banner_2=['<img src="/wp-content/themes/reklamnyeigry-theme/images/300х600_1.jpg">', '<img src="/wp-content/themes/reklamnyeigry-theme/images/300х600_2.jpg">'];
+	
+$banner_1=[
+	array('<img src="'.get_template_directory_uri ().'/images/728 x 90_1.jpg">', 'https://zavlab.onest.by/?utm_source=reklamnyeigry&utm_medium=banner&utm_campaign=large-banner-1'), 
+	array('<img src="'.get_template_directory_uri ().'/images/728 x 90_2.jpg">', 'https://zavlab.onest.by/?utm_source=reklamnyeigry&utm_medium=banner&utm_campaign=large-banner-2')
+];
 
-			$a=rand(1,10);
-			if ($a<=4){
-				$mesto=$vse_mesta[array_rand($vse_mesta, 1)];
-			}
-			
+$banner_2=[
+	array('<img src="'.get_template_directory_uri ().'/images/300х600_1.jpg">', 'https://zavlab.onest.by/?utm_source=reklamnyeigry&utm_medium=banner&utm_campaign=wide-banner-1'),
+	array('<img src="'.get_template_directory_uri ().'/images/300х600_2.jpg">', 'https://zavlab.onest.by/?utm_source=reklamnyeigry&utm_medium=banner&utm_campaign=wide-banner-2')
+];
+
+
+$ad_place=get_place();
+echo $ad_place;
+
 			
 			/* Start the Loop */
 			
@@ -60,16 +68,15 @@ get_header(); ?>
 				
 				if ($postcount == 2 || $postcount == 9 ): ?>
 						<div class="banner">
-							  <?php if (function_exists ('adinserter')) echo adinserter (1);  
+							<?php  
 							
-							if ($mesto==$postcount){
-								echo $banner_1[array_rand($banner_1, 1)];
-							}?>
-
+							if ($ad_place==$postcount){
+									get_banner_for_place($banner_1);
+							}else{ if (function_exists ('adinserter')) echo adinserter (1); }
+							?>
 						</div>
 
 					<?php 	
-				
 				endif;
 
 				if ($postcount%6==0):?>
@@ -77,9 +84,10 @@ get_header(); ?>
 						<div class="banner2" >
 						<?php if (function_exists ('adinserter')) echo adinserter (2);
 
-								if ($mesto==$postcount){
-									echo $banner_2[array_rand($banner_2, 1)];
-								}?>
+								if ($ad_place==$postcount){
+									get_banner_for_place($banner_2);
+								}
+								?>
 
 						</div>
 					</article>
