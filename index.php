@@ -12,73 +12,93 @@
  * @package Kristinka
  */
 
+
 get_header(); ?>
 
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
+    <div id="primary" class="content-area">
+        <main id="main" class="site-main" role="main">
 
-		<?php
+        <?php
 
-		$postcount=0;
+        $postcount=0;
+        
 
-		if ( have_posts() ) :
+        if ( have_posts() ) :
 
-			if ( is_home() && ! is_front_page() ) : ?>
-				<header>
-					<h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
-				</header>
+            if ( is_home() && ! is_front_page() ) : ?>
+                <header>
+                    <h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
+                </header>
 
-			<?php
-			endif;
-			?>
+            <?php
+            endif;
+            ?>
 
-			<div class="articles-wrapper">
+            <div class="articles-wrapper">
 
-			<?php
-			/* Start the Loop */
-			
-			while ( have_posts() ) : the_post();
-				$postcount++;
+            <?php
+    
+            $ad_place=get_place();
+            
+            /* Start the Loop */
+            
+            while ( have_posts() ) : the_post();
+                $postcount++;
 
-				/*
-				 * Include the Post-Format-specific template for the content.
-				 * If you want to override this in a child theme, then include a file
-				 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
-				 */
-				get_template_part( 'template-parts/content', get_post_format() );
-				
-				if ($postcount == 2 || $postcount == 9 ): ?>
-						<div class="banner">
-							<?php if (function_exists ('adinserter')) echo adinserter (1); ?>
-						</div>
-				<?php 
-				endif;
+                /*
+                 * Include the Post-Format-specific template for the content.
+                 * If you want to override this in a child theme, then include a file
+                 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
+                 */
+                get_template_part( 'template-parts/content', get_post_format() );
+                
+                if  ($postcount == OUR_BANNER_PLACE_small_1
+                  || $postcount == OUR_BANNER_PLACE_small_2): ?>
+                        <div class="banner">
+                            <?php  if ($ad_place==$postcount){
+                                    get_banner_for_place($ad_place);
+                            }else{ 
+                                if (function_exists ('adinserter')) echo adinserter (1); 
+                                }
+                                ?>
+                        </div>
+                        <?php     
+                endif;
 
-				if ($postcount%6==0):?>
-					<article class="kristinka-magazine post" >
-						<div class="banner2" >
-						<?php if (function_exists ('adinserter')) echo adinserter (2); ?>
-						</div>
-					</article>
-				<?php 
-				endif;
+                if ($postcount%6==0):?>
+                    <article class="kristinka-magazine post" >
+                        <div class="banner2" >
+                            <?php if ($ad_place==$postcount){
+                                    get_banner_for_place($ad_place);
+                                }else{
+                                    if (function_exists ('adinserter')) echo adinserter (2);
+                                }
+                                ?>
 
-			endwhile; ?>
+                        </div>
+                    </article>
+                <?php 
+                endif;
 
-			</div>
+            endwhile; ?>
 
-		<?php
-			the_posts_navigation();
+            </div>
 
-		else :
+        <?php
+            the_posts_navigation();
 
-			get_template_part( 'template-parts/content', 'none' );
+        else :
 
-		endif; ?>
+            get_template_part( 'template-parts/content', 'none' );
 
-		</main><!-- #main -->
-	</div><!-- #primary -->
+        endif; ?>
+
+        </main><!-- #main -->
+    </div><!-- #primary -->
 
 <?php
 kristinka_sidebar_select();
 get_footer();
+
+
+

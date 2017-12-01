@@ -7,6 +7,15 @@
  * @package Kristinka
  */
 
+
+define('OUR_BANNER_PLACE_small_1', 2);
+define('OUR_BANNER_PLACE_small_2', 9);
+define('OUR_BANNER_PLACE_large_1', 6);
+define('OUR_BANNER_PLACE_large_2', 12);
+define('OUR_BANNER_PLACE_large_3', 18);
+
+
+
 if ( ! function_exists( 'kristinka_setup' ) ) :
 /**
  * Sets up theme defaults and registers support for various WordPress features.
@@ -245,6 +254,62 @@ function kristinka_loop_shop_per_page( $cols ) {
 add_action( 'after_setup_theme', 'kristinka_woocommerce_support' );
 add_filter( 'loop_shop_per_page', 'kristinka_loop_shop_per_page', 20 );
 
+
+// OUR banners
+// __________________
+
+
+$vse_mesta = [
+  OUR_BANNER_PLACE_small_1,
+  OUR_BANNER_PLACE_small_2,
+  OUR_BANNER_PLACE_large_1,
+  OUR_BANNER_PLACE_large_2,
+  OUR_BANNER_PLACE_large_3
+];
+
+
+function get_place(){
+	global $vse_mesta;
+
+	$a=rand(0,100);
+
+	if ($a<=10) {
+		return $vse_mesta[array_rand($vse_mesta, 1)]; 
+  } else { 
+    return 0; 
+  }
+}
+
+
+
+function get_banner_for_place($mesto){
+
+$banner_1=[
+	array('<img src="'.get_template_directory_uri ().'/images/728x90_1.jpg">', 'https://zavlab.onest.by/?utm_source=reklamnyeigry&utm_medium=banner&utm_campaign=large-banner-1'), 
+	array('<img src="'.get_template_directory_uri ().'/images/728x90_2.jpg">', 'https://zavlab.onest.by/?utm_source=reklamnyeigry&utm_medium=banner&utm_campaign=large-banner-2')
+];
+
+$banner_2=[
+	array('<img src="'.get_template_directory_uri ().'/images/300х600_1.jpg">', 'https://zavlab.onest.by/?utm_source=reklamnyeigry&utm_medium=banner&utm_campaign=wide-banner-1'),
+	array('<img src="'.get_template_directory_uri ().'/images/300х600_2.jpg">', 'https://zavlab.onest.by/?utm_source=reklamnyeigry&utm_medium=banner&utm_campaign=wide-banner-2')
+];
+
+	if ($mesto==OUR_BANNER_PLACE_small_1 || $mesto==OUR_BANNER_PLACE_small_2) {
+		$vibor=$banner_1[array_rand($banner_1, 1)]; ?>
+			<a href="<?php echo $vibor[1] ?>" target="_blank">
+				<?php echo $vibor[0];?>
+			</a><?php
+	} elseif (
+         $mesto==OUR_BANNER_PLACE_large_1
+      || $mesto==OUR_BANNER_PLACE_large_2
+      || $mesto==OUR_BANNER_PLACE_large_3
+    ) {
+		$vibor=$banner_2[array_rand($banner_2, 1)]; ?>
+			<a href="<?php echo $vibor[1] ?>" target="_blank">
+				<?php echo $vibor[0];?>
+			</a><?php
+	}
+}
 
 
 
