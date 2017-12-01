@@ -39,7 +39,7 @@ get_header(); ?>
             <?php
     
             $ad_place=get_place();
-            
+
             /* Start the Loop */
             
             while ( have_posts() ) : the_post();
