@@ -273,7 +273,7 @@ function get_place(){
 
 	$a=rand(0,100);
 
-	if ($a<=10) {
+	if ($a<=25) {
 		return $vse_mesta[array_rand($vse_mesta, 1)]; 
   } else { 
     return 0; 
