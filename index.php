@@ -37,13 +37,10 @@ get_header(); ?>
             <div class="articles-wrapper">
 
             <?php
-            $ad_place = get_place(); ?>
+            $ad_place = get_place();
 
-            <script>
-              console.log('Рекламное место <?= $ad_place ?>');
-            </script>
+            js_console('Рекламное место '.$ad_place);
 
-            <?php
             /* Start the Loop */
             
             while ( have_posts() ) : the_post();

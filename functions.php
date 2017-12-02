@@ -255,6 +255,14 @@ add_action( 'after_setup_theme', 'kristinka_woocommerce_support' );
 add_filter( 'loop_shop_per_page', 'kristinka_loop_shop_per_page', 20 );
 
 
+function js_console($s)
+{ ?>
+<script>
+  console.log('<?= $s ?>');
+</script>
+<?php
+}
+
 // OUR banners
 // __________________
 
@@ -269,12 +277,13 @@ $vse_mesta = [
 
 
 function get_place(){
-	global $vse_mesta;
+  global $vse_mesta;
 
-	$a=rand(0,100);
+  $a=mt_rand(0,100);
+  js_console('a = '.$a);
 
-	if ($a<=25) {
-		return $vse_mesta[array_rand($vse_mesta, 1)]; 
+  if ($a<=25) {
+    return $vse_mesta[array_rand($vse_mesta, 1)]; 
   } else { 
     return 0; 
   }
