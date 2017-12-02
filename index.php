@@ -37,9 +37,13 @@ get_header(); ?>
             <div class="articles-wrapper">
 
             <?php
-    
-            $ad_place=get_place();
+            $ad_place = get_place(); ?>
 
+            <script>
+              console.log('Рекламное место <?= $ad_place ?>');
+            </script>
+
+            <?php
             /* Start the Loop */
             
             while ( have_posts() ) : the_post();
@@ -55,26 +59,25 @@ get_header(); ?>
                 if  ($postcount == OUR_BANNER_PLACE_small_1
                   || $postcount == OUR_BANNER_PLACE_small_2): ?>
                         <div class="banner">
-                            <?php  if ($ad_place==$postcount){
-                                    get_banner_for_place($ad_place);
-                            }else{ 
-                                if (function_exists ('adinserter')) echo adinserter (1); 
-                                }
-                                ?>
+                            <?php if ($ad_place == $postcount) {
+                              get_banner_for_place($ad_place);
+                            } else {
+                              if (function_exists ('adinserter')) echo adinserter (1); 
+                            }
+                          ?>
                         </div>
-                        <?php     
+                <?php
                 endif;
 
-                if ($postcount%6==0):?>
+                if ($postcount%6 == 0): ?>
                     <article class="kristinka-magazine post" >
-                        <div class="banner2" >
-                            <?php if ($ad_place==$postcount){
-                                    get_banner_for_place($ad_place);
-                                }else{
-                                    if (function_exists ('adinserter')) echo adinserter (2);
+                        <div class="banner2">
+                            <?php if ($ad_place == $postcount) {
+                                  get_banner_for_place($ad_place);
+                                } else {
+                                  if (function_exists ('adinserter')) echo adinserter (2);
                                 }
-                                ?>
-
+                            ?>
                         </div>
                     </article>
                 <?php 
